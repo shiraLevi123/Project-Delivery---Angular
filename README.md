@@ -20,7 +20,9 @@
 - **Pipe**
 - **Filters**
 
-### מאפיינים מרכזיים:
+---
+
+### 💡מאפיינים מרכזיים:
 
    - **התחברות והתנתקות** 
   - **דף בית**
@@ -34,11 +36,11 @@
    - **עדכון שליח**
    - **בדיקה אם הגיע תאריך של הזמנה דחופה**
    - **הרשאות גישה ואבטחה**
-
+---
 
 ## 📸צילומי מסך
 
----
+
 
 ![דף בית](https://github.com/user-attachments/assets/78cad0ca-5f16-4202-aa7a-e1c66a718e85)
 
@@ -81,7 +83,6 @@
 
 ![רשימת הזמנות](https://github.com/user-attachments/assets/3822c5aa-f691-48c3-ba58-21ef89476885)
 
----
 ---
 ![מייל](https://github.com/user-attachments/assets/521be34c-dd88-422e-8694-577afe67f619)
 
