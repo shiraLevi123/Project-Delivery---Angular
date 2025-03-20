@@ -16,7 +16,7 @@
 - **Lazy-Loading**
 - **Modules**
 - **Directive**
-- **Service**
+- **Services**
 - **Pipe**
 - **Filters**
 
