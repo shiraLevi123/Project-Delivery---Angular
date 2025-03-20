@@ -1,13 +1,14 @@
 # Project-Delivery-Angular
 
 ## 🌐 סקירה כללית
-הצד של הלקוח בפרויקט **Delivery** נבנה ב-**Angular** תוך שימוש ב-**CSS3 ו-SweetAlert2** לעיצוב.
+הצד של הלקוח בפרויקט **Delivery** נבנה ב-**Angular** תוך שימוש ב-**CSS3 ו-SweetAlert2** לעיצוב המספק ממשק משתמש דינמי וידידותי.
 
 ---
 
 ### 🛠️ טכנולוגיות וכלים:
 
 - **C#** 
+- **ASP.NET Core** 
 - **SQL** 
 - **JWT**
 - **API**
