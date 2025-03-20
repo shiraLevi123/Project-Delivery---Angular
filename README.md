@@ -1,6 +1,6 @@
 # Project-Delivery-Angular
 
-## 🌐 סקירה כללית
+## 🌐 סקירה כללית-צד לקוח
 הצד של הלקוח בפרויקט **Delivery** נבנה ב-**Angular** תוך שימוש ב-**CSS3 ו-SweetAlert2** לעיצוב המספק ממשק משתמש דינמי וידידותי.
 
 ---
