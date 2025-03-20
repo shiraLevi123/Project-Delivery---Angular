@@ -1,7 +1,7 @@
 # Project-Delivery-Angular
 
 ## 🌐 סקירה כללית
-הצד של הלקוח בפרויקט **Delivery** נבנה ב-**Angular** תוך שימוש ב-**css3** לעיצוב.
+הצד של הלקוח בפרויקט **Delivery** נבנה ב-**Angular** תוך שימוש ב-**CSS3 ו-SweetAlert2** לעיצוב.
 
 ---
 
@@ -11,17 +11,19 @@
 - **SQL** 
 - **JWT**
 - **API**
+- **CSS3**
 
 ### מאפיינים מרכזיים:
 
-   - **והתחברות** 
+   - **התחברות והתנתקות** 
+  - **דף בית**
+  - **סינונים מתקדמים**
    - **צפייה בפרופיל**
    - **רשימת הזמנות**
    - **רשימת שליחים**
-   - **סל ההזמנות**
+   - **סל ההזמנות אישי**
    - **מציאת המסלול הקצר ביותר**
-   - **שליחת מייל**
-   - **זימון שליחי אקספרס**
+   - **זימון שליחי אקספרס במייל**
    - **עדכון שליח**
    - **בדיקה אם הגיע תאריך של הזמנה דחופה**
    - **הרשאות גישה ואבטחה**
@@ -35,6 +37,11 @@
 
 
 
+---
+
+![check](https://github.com/user-attachments/assets/58eca78b-bc9c-47c6-b0ae-5b568f41cae6)
+
+---
 ---
 ![התחברות](https://github.com/user-attachments/assets/6907b49f-d16d-4a26-8325-d1fde778ef60)
 
