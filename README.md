@@ -13,6 +13,12 @@
 - **JWT**
 - **API**
 - **CSS3**
+- **Lazy-Loading**
+- **Modules**
+- **Directive**
+- **Service**
+- **Pipe**
+- **Filters**
 
 ### מאפיינים מרכזיים:
 
