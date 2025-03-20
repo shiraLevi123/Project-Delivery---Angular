@@ -1,0 +1,45 @@
+<div class="basket-container">
+  <h1>סל ההזמנות שלי 🛒</h1>
+  @if (orderCount > 0) {
+  <span class="order-count-badge">{{ orderCount }}</span>}
+
+  @if (showToastMessage) {
+  <div class="custom-toast">
+    <div class="toast-content">
+      {{ toastMessage }}
+    </div>
+    <button class="toast-close" (click)="closeToast()">✖</button>
+  </div>
+  }
+  @if (orders.length > 0) {
+  <div class="orders-list">
+    @for (order of orders; track order.id) {
+    @if (order.status==false) {
+    <div class="order-card">
+      <div class="order-header">
+        <h3>הזמנה #{{order.id}}</h3>
+        <span class="order-status">{{order.status ? 'הושלם' : 'בתהליך'}}</span>
+      </div>
+      <div class="order-details">
+        <p><strong>שם לקוח:</strong> {{order.customerName}}</p>
+        <p><strong>כתובת:</strong> {{order.address}} {{order.numHouse}}, {{order.city}}</p>
+        <p><strong>טלפון:</strong> {{order.phone}}</p>
+        <div class="order-dates">
+          <p><strong>תאריך יצירת הזמנה:</strong> {{order.dateCreated | date:'dd/MM/yyyy'}}</p>
+          <p><strong>תאריך לאספקה:</strong> {{order.dateFinal | date:'dd/MM/yyyy'}}</p>
+        </div>
+      </div>
+      <button class="complete-button" (click)="DidIt(order)">בוצע ✔️</button>
+    </div>
+    }
+    }
+  </div>
+  } @else {
+  <div class="empty-basket">
+    <span class="empty-icon">📭</span>
+    <p>אין הזמנות בסל שלך כרגע</p>
+  </div>
+  }
+
+  <button class="route-button" (click)="TrackCalculation()">מצא את המסלול הקצר ביותר 🗺️</button>
+</div>

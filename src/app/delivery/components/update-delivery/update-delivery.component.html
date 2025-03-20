@@ -1,0 +1,72 @@
+<div class="login-container">
+  <form [formGroup]="updateForm" class="update-form">
+    <h1>עדכון שליח</h1>
+
+    <div class="form-group">
+      <label>שם משתמש:</label>
+      <input type="text" formControlName="name" class="form-control" placeholder="שם משתמש">
+      @if(updateForm.controls['name'].errors){
+      <div class="error-message">חובה לכתוב שם</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>אימייל:</label>
+      <input type="text" formControlName="email" class="form-control" placeholder="אימייל">
+      @if(updateForm.controls['email'].errors){
+      <div class="error-message">חובה לכתוב אימייל</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>סיסמא:</label>
+      <input type="password" formControlName="password" class="form-control" placeholder="סיסמא">
+      @if(updateForm.controls['password'].errors){
+      @if(updateForm.controls['password'].errors['required']){
+      <div class="error-message">חובה לכתוב סיסמא</div>
+      }
+      @if(updateForm.controls['password'].errors['minlength']){
+      <div class="error-message">חובה להכיל לפחות 8 תווים</div>
+      }
+      }
+    </div>
+
+    <div class="form-group">
+      <label>כתובת:</label>
+      <input type="text" formControlName="address" class="form-control" placeholder="כתובת">
+    </div>
+
+    <div class="form-group">
+      <label>
+        שליח אקספרס?
+        <div class="checkbox-wrapper-31">
+          <input type="checkbox" formControlName="express" class="form-checkbox" />
+          <svg viewBox="0 0 35.6 35.6">
+            <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+            <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+            <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+          </svg>
+        </div>
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>טלפון:</label>
+      <input type="text" formControlName="phone" class="form-control" placeholder="טלפון">
+    </div>
+
+    <div class="form-group">
+      <label>סוג תפקיד:</label>
+      <select formControlName="roles" class="form-control">
+        <option value="manager">manager</option>
+        <option value="שליח">שליח</option>
+      </select>
+    </div>
+
+    <div class="form-group buttons">
+
+      <button (click)="updateDelivery()" [disabled]="updateForm.invalid" class="button">עדכון שליח </button>
+      <button (click)="cencel()" class="button">ביטול</button>
+    </div>
+  </form>
+</div>

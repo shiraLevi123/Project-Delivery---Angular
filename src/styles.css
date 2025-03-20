@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    background-color:#415a77 ;
+    direction: rtl;
+}
+p,h2,a,h1{
+    color: rgb(0, 0, 0);
+    font-size: 170%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+label{
+    font-size: 120%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(0, 0, 0);
+
+}

@@ -1,0 +1,69 @@
+<h1>רשימת הזמנות לביצוע</h1>
+@if (isAdmin) {
+
+<div class="button-container">
+  <button class="toggle-button" (click)="viewMode = 'toDo'">הזמנות לביצוע ⏳</button>
+  <button class="toggle-button" (click)="viewMode = 'done'"> הזמנות שבוצעו ✔️ </button>
+  </div>
+}
+<br>
+<br>
+
+<select [(ngModel)]="selectedArea" (ngModelChange)="getFilteredOrders()" class="select-box">
+  <option class="select-box" value="">כל האזורים</option>
+  @for(city of uniqueAreas; track city) {
+  <option class="select-box" [value]="city">{{city}}</option>
+  }
+</select>
+@if (viewMode === 'toDo') {
+
+<div class="order-container-toDo">
+  @for(order of filteredOrders; track $index) {
+    @if(order.status !== true && order.status !== false && order.deliverId == '0') {
+      <div class="order-card-toDo" appexpiredOrder [dateFinal]="order.dateFinal">
+      <div class="order-card-header">
+      <h3>{{"שם לקוח: " + order.customerName}}</h3>
+    </div>
+    <div class="order-card-body">
+      <p><strong>תאריך הזמנה:</strong> {{order.dateCreated | date:'yyyy-MM-dd'}}</p>
+      <p><strong>לביצוע עד:</strong> {{order.dateFinal | date:'yyyy-MM-dd'}}</p>
+      <p><strong>עיר:</strong> {{order.city}}</p>
+      <p><strong>רחוב:</strong> {{order.address}}</p>
+      <p><strong>מספר בית:</strong> {{order.numHouse}}</p>
+      <p><strong>טלפון:</strong> {{order.phone}}</p>
+    </div>
+    <div class="order-card-footer">
+      <button class="button-s" (click)="addToBasket(order)">➕ הוספה לסל שלי </button>
+    </div>
+  </div>
+  }
+  }
+</div>
+}
+
+
+@if (viewMode === 'done' && isAdmin) {
+<h1>רשימת הזמנות שבוצעו</h1>
+<div class="order-container-toDo">
+  @for(order of filteredOrders; track $index) {
+  @if(order.status == true) {
+  <div class="order-card-toDo">
+    <div class="order-card-header">
+      <h3>{{"שם לקוח: " + order.customerName}}</h3>
+    </div>
+    <div class="order-card-body">
+      <p><strong>תאריך הזמנה:</strong> {{order.dateCreated | date:'yyyy-MM-dd'}}</p>
+      <p><strong>בוצע עד:</strong> {{order.dateFinal | date:'yyyy-MM-dd'}}</p>
+      <p><strong>עיר:</strong> {{order.city}}</p>
+      <p><strong>רחוב:</strong> {{order.address}}</p>
+      <p><strong>מספר בית:</strong> {{order.numHouse}}</p>
+      <p><strong>טלפון:</strong> {{order.phone}}</p>
+    </div>
+    <div class="order-card-footer">
+      <button class="button-s" (click)="deleteOrder(order.id)">מחיקת הזמנה ✖️</button>
+    </div>
+  </div>
+  }
+  }
+</div>
+}

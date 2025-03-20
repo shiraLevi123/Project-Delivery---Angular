@@ -1,0 +1,91 @@
+<div class="login-container">
+  
+<form [formGroup]="addForm" class="update-form">
+    <h1>הוספת שליח</h1>
+
+    
+    <div class="form-group">
+        <input type="text" formControlName="name" class="form-control" placeholder="שם">
+        @if(addForm.get('name')?.touched && addForm.get('name')?.invalid){
+        <div class="error-message">יש להזין שם</div>
+        }
+    </div>
+
+    <div class="form-group">
+        <input type="email" formControlName="email" class="form-control"  placeholder="אימייל">
+        @if(addForm.get('email')?.touched && addForm.get('email')?.invalid){
+        <div class="error-message">יש להזין דוא"ל</div>
+        }
+    </div>
+
+    <div class="form-group">
+        <input type="password" formControlName="password" class="form-control"  placeholder="סיסמא">
+        @if(addForm.get('password')?.touched && addForm.get('password')?.invalid){
+        @if(addForm.get('password')?.errors?.['required']){
+        <div class="error-message">יש להזין סיסמא</div>
+        }
+        @if(addForm.get('password')?.errors?.['minlength']){
+        <div class="error-message">הסיסמא חייבת להכיל לפחות 8 תווים</div>
+        }
+        }
+    </div>
+
+    <div class="form-group">
+        <div class="address-autocomplete">
+            <input type="text" formControlName="address" class="form-control" autocomplete="off" placeholder="כתובת"> 
+            @if(loading){
+            <div class="loading-indicator">טוען...</div>
+            }
+            @if(suggestions.length > 0){
+            <ul class="address-suggestions">
+                @for(suggestion of suggestions; track suggestion){
+                <li class="suggestion-item" (click)="selectAddress(suggestion)">
+                    {{ suggestion.description }}
+                </li>
+                }
+            </ul>
+            }
+        </div>
+        @if(addForm.get('address')?.touched && addForm.get('address')?.invalid){
+        <div class="error-message">יש להזין כתובת</div>
+        }
+    </div>
+
+    <div class="form-group">
+        
+        <input type="text" formControlName="phone" class="form-control" placeholder="טלפון">
+        @if(addForm.get('phone')?.touched && addForm.get('phone')?.invalid){
+        @if(addForm.get('phone')?.errors?.['required']){
+        <div class="error-message">יש להזין מספר טלפון</div>
+        }
+        @if(addForm.get('phone')?.errors?.['pattern']){
+        <div class="error-message">יש להזין מספרים בלבד</div>
+        }
+        }
+    </div>
+
+    <div class="form-group">
+        <label>
+                 שליח אקספרס?       
+            <div class="checkbox-wrapper-31">
+                <input type="checkbox" formControlName="express" class="form-checkbox" />
+                <svg viewBox="0 0 35.6 35.6">
+                    <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+                    <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+                    <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+                </svg>
+            </div>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <select formControlName="roles" class="form-control">
+          <option value="" disabled selected>תפקיד</option>
+          <option value="manager">manager</option>
+          <option value="שליח">שליח</option>
+        </select>
+      </div>
+
+    <button class="button" type="submit" (click)="addDelivery()" [disabled]="addForm.invalid"> הוסף שליח </button>
+</form>
+</div>

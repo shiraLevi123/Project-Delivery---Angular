@@ -1,0 +1,63 @@
+<div class="header">
+  <div class="home-icon" (click)="nav()">
+    <i class="fas fa-home"></i>
+  </div>
+  <div class="menu-icon" (click)="toggleSidebar()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+</div>
+
+<div class="sidebar-overlay" [class.active]="isSidebarOpen" (click)="closeSidebar()"></div>
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="close-icon" (click)="toggleSidebar()">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+  </div>
+
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li><a routerLink="" routerLinkActive="active" (click)="closeSidebar()">דף הבית
+          <i class="fas fa-home"></i> </a></li>
+      <li><a routerLink="" (click)="logout()"> התנתקות
+          <i class="fas fa-sign-out-alt"></i>
+        </a></li>
+      @if(!isLogIn){
+      <li>
+        <a routerLink="/login-delivery" routerLinkActive="active" (click)="closeSidebar()">
+          התחברות <i class="fas fa-sign-in-alt"></i>
+        </a>
+      </li> }
+
+      <li>
+        <a routerLink="/orders" routerLinkActive="active" (click)="closeSidebar()">רשימת הזמנות <i
+            class="fas fa-search"></i></a>
+      </li>
+
+      @if(isAdmin){
+      <li>
+        <a routerLink="/add-delivery" routerLinkActive="active" (click)="closeSidebar()">הוספת שליח חדש <i
+            class="fas fa-plus"></i></a>
+      </li>
+      <li>
+        <a routerLink="/delivery-list" routerLinkActive="active" (click)="closeSidebar()">רשימת שליחים <i
+            class="fas fa-user"></i></a>
+      </li>
+      }
+
+
+      <li>
+        <a routerLink="order-basket" routerLinkActive="active" (click)="closeSidebar()">סל ההזמנות שלי
+          <i class="fas fa-shopping-cart"></i>
+
+          @if (orderCount > 0) {
+          <span class="order-count-badge">{{ orderCount }}</span>}
+        </a>
+      </li>
+     
+      <li><a routerLink="/profile" routerLinkActive="active" (click)="closeSidebar()">איזור אישי <i
+            class="fas fa-info-circle"></i></a></li>
+    </ul>
+  </nav>
+</div>
