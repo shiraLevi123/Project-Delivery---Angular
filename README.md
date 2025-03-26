@@ -9,7 +9,8 @@
 
 - **C#** 
 - **ASP.NET Core** 
-- **SQL** 
+- **SQL**
+- **Forms**
 - **JWT**
 - **API**
 - **CSS3**
