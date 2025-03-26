@@ -10,11 +10,11 @@
 - **C#** 
 - **ASP.NET Core** 
 - **SQL**
-- **Forms**
 - **JWT**
 - **API**
 - **CSS3**
 - **Lazy-Loading**
+- **Forms**
 - **Modules**
 - **Directive**
 - **Services**
